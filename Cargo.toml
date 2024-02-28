@@ -1,0 +1,17 @@
+[package]
+name = "jui_test"
+version = "0.1.0"
+edition = "2021"
+readme = "Readme.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+slint = "1.4.1"
+
+cbsk_base = { version = "0.1.6", features = ["once_cell", "tokio_full"] }
+cbsk_run = { version = "0.1.8", features = ["async_pool"] }
+cbsk_mut_data = { version = "0.1.4", default-features = false, features = ["obj"] }
+
+[build-dependencies]
+jui = "0.1.10"

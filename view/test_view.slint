@@ -1,0 +1,30 @@
+import { Button } from "@jui/button.slint";
+import { Confirm } from "@jui/message/confirm.slint";
+
+export struct TestData {
+    index:int,
+    confirm_data:string,
+    hello_world:string,
+}
+
+export global TestGlobal {
+    in property <TestData> test;
+}
+
+export component TestView {
+    in property <TestData> test;
+
+    Text {y: 10px;text: test.hello_world;}
+
+    Button {
+        y: 330px;
+        clicked => {
+            confirm.show();
+        }
+    }
+
+    confirm:= Confirm {
+        y: 30px;
+        Text {text: test.confirm_data;}
+    }
+}

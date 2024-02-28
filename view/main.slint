@@ -1,0 +1,18 @@
+import { TestGlobal,TestData,TestView } from "test_view.slint";
+
+export { TestGlobal,TestData }
+
+export component App inherits Window {
+    background: yellow;
+    width: 1000px;
+    height: 500px;
+
+    if TestGlobal.test.index == 1 :TestView {
+        y: 0;
+        test: TestGlobal.test;
+    }
+    if TestGlobal.test.index == 2 :TestView {
+        y: 0;
+        test: TestGlobal.test;
+    }
+}
